@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSwap - Messages</title>
+    <style>
+        :root {
+            --primary-blue: #3b82f6;
+            --light-blue: #93c5fd;
+            --dark-blue: #1e40af;
+            --white: #ffffff;
+            --light-gray: #f3f4f6;
+            --medium-gray: #e5e7eb;
+            --dark-gray: #6b7280;
+            --text-dark: #111827;
+        }
+        
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-gray);
+            height: 100vh;
+            display: flex;
+            color: var(--text-dark);
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background-color: var(--white);
+            border-right: 1px solid var(--medium-gray);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .app-header {
+            padding: 20px;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary-blue);
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .sidebar-menu {
+            display: flex;
+            flex-direction: column;
+            padding: 15px 0;
+        }
+        
+        .menu-section {
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            padding: 8px 20px;
+            font-size: 12px;
+            color: var(--dark-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .menu-item {
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .menu-item i {
+            margin-right: 12px;
+            color: var(--dark-gray);
+            width: 20px;
+            text-align: center;
+        }
+        
+        .menu-item:hover {
+            background-color: var(--light-gray);
+        }
+        
+        .menu-item.active {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--primary-blue);
+            font-weight: 500;
+        }
+        
+        .menu-item.active i {
+            color: var(--primary-blue);
+        }
+        
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .content-header {
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 600;
+            background-color: var(--white);
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .chat-container {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: var(--white);
+        }
+        
+        .welcome-message {
+            text-align: center;
+            margin-top: 100px;
+        }
+        
+        .welcome-message h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .welcome-message p {
+            color: var(--dark-gray);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        /* Chat elements (hidden by default) */
+        .chat-active {
+            display: none;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 80px;
+            }
+            .section-title, .menu-item span {
+                display: none;
+            }
+            .menu-item {
+                justify-content: center;
+                padding: 15px 0;
+            }
+            .menu-item i {
+                margin-right: 0;
+                font-size: 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="app-header">SkillSwap</div>
+        
+        <div class="sidebar-menu">
+            <div class="menu-section">
+                <div class="section-title">Menu</div>
+                <a href="#" class="menu-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-compass"></i>
+                    <span>Explore</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>Messages</span>
+                </a>
+            </div>
+            
+            <div class="menu-section">
+                <div class="section-title">Account</div>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-bookmark"></i>
+                    <span>Saved</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content Area -->
+    <div class="main-content">
+        <div class="content-header">Recommended for You</div>
+        
+        <div class="chat-container">
+            <div class="welcome-message">
+                <h2>Welcome to SkillSwap Messages</h2>
+                <p>Select a conversation from your messages or start a new one to begin exchanging skills with the community.</p>
+            </div>
+            
+            <!-- This would be shown when a chat is active -->
+            <div class="chat-active">
+                <!-- Chat messages would appear here -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+/* Main Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Sidebar Styles */
+.sidebar-item:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* Post Card Styles */
+.post-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Styles */
+.navbar {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styles */
+.logo {
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Search Input Styles */
+#search-input {
+    transition: all 0.3s ease;
+}
+
+#search-input:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Explore Page Active State */
+.sidebar-item.bg-blue-50 {
+    background-color: rgba(59, 130, 246, 0.1);
+}
