@@ -1,0 +1,397 @@
+/* Base Styles */
+:root {
+    --primary: #3b82f6;
+    --primary-hover: #2563eb;
+    --secondary: #f3f4f6;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --border: #e5e7eb;
+    --success: #10b981;
+    --error: #ef4444;
+    --warning: #f59e0b;
+  }
+  
+  body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f9fafb; /* Replaced @apply with direct property */
+    color: #111827; /* Replaced @apply with direct property */
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  
+  /* Layout Styles */
+  .container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left: 0;
+    top: 64px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 20;
+    width: 16rem;
+  }
+  
+  .sidebar.collapsed {
+    width: 5rem;
+  }
+  
+  .sidebar.collapsed .sidebar-text {
+    display: none;
+  }
+  
+  .sidebar-item {
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  }
+  
+  .sidebar-item:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: #2563eb;
+  }
+  
+  .sidebar-item:hover i {
+    color: #3b82f6;
+  }
+  
+  .sidebar-toggle {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    right: -0.75rem;
+    top: 1rem;
+    background-color: white;
+    padding: 0.25rem;
+    border-radius: 9999px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    color: #6b7280;
+  }
+  
+  .sidebar-toggle:hover {
+    color: #374151;
+  }
+  
+  .sidebar.collapsed .sidebar-toggle {
+    transform: rotate(180deg);
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    background-color: white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: 4rem;
+  }
+  
+  /* Post Card Styles */
+  .post-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #f3f4f6;
+  }
+  
+  .post-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: rgba(191, 219, 254, 1);
+    transform: translateY(-0.25rem);
+  }
+  
+  .skill-tag {
+    padding: 0.25rem 0.5rem;
+    background-color: rgba(191, 219, 254, 1);
+    color: #1e40af;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 0.25rem;
+    transition: background-color 200ms ease-in-out;
+  }
+  
+  .skill-tag:hover {
+    background-color: rgba(147, 197, 253, 1);
+  }
+  
+  /* Chat Styles */
+  #chat-messages {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #3b82f6 #f3f4f6;
+  }
+  
+  #chat-messages::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  #chat-messages::-webkit-scrollbar-track {
+    background-color: #f3f4f6;
+  }
+  
+  #chat-messages::-webkit-scrollbar-thumb {
+    background-color: #93c5fd;
+    border-radius: 9999px;
+  }
+  
+  .message-bubble {
+    max-width: 20rem;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+  }
+  
+  .message-bubble.current-user {
+    background-color: rgba(191, 219, 254, 1);
+  }
+  
+  .message-bubble.other-user {
+    background-color: #f3f4f6;
+  }
+  
+  /* Form Styles */
+  .input-field {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    outline: none;
+    transition: all 200ms ease-in-out;
+  }
+  
+  .input-field:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: background-color 200ms ease-in-out;
+    outline: none;
+  }
+  
+  .btn:focus {
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  }
+  
+  .btn-primary {
+    background-color: #3b82f6;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #2563eb;
+  }
+  
+  .btn-secondary {
+    background-color: white;
+    border: 1px solid #d1d5db;
+    color: #374151;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #f9fafb;
+  }
+  
+  /* Modal Styles */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    backdrop-filter: blur(2px);
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    max-width: 28rem;
+    width: 100%;
+    margin: 0 0.5rem;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+  }
+  
+  /* Toast Styles */
+  .toast {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    animation: toastIn 0.3s ease-out;
+  }
+  
+  .toast.success {
+    background-color: #10b981;
+  }
+  
+  .toast.error {
+    background-color: #ef4444;
+  }
+  
+  .toast.info {
+    background-color: #3b82f6;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { 
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes toastIn {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  
+  /* Loading Spinner */
+  .spinner {
+    animation: spin 1s linear infinite;
+    border-radius: 9999px;
+    border: 2px solid #3b82f6;
+    border-top-color: transparent;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .sidebar {
+      transform: translateX(-100%);
+      width: 80%;
+      max-width: 18rem;
+    }
+    
+    .sidebar.open {
+      transform: translateX(0);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .main-content {
+      margin-left: 0 !important;
+    }
+  
+    .mobile-menu-btn {
+      display: block;
+    }
+  
+    .post-card {
+      width: 100%;
+    }
+  }
+  
+/* 
+ * Multi-line text truncation utility
+ * Limits content to 2 lines with ellipsis (...) at the end
+ * Works in all modern browsers (Chrome, Firefox, Safari, Edge)
+ */
+.truncate-2-lines {
+  /* Required properties for line clamping */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  
+  /* Standard properties for truncation */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  /* Recommended supporting properties */
+  word-break: break-word; /* Handle long words */
+  hyphens: auto; /* Better hyphenation */
+  line-height: 1.5; /* Consistent line spacing */
+  max-height: calc(1.5em * 2); /* Fallback height (line-height × number of lines) */
+  
+  /* Vendor prefixes for wider compatibility */
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* 
+ * Alternative single-line truncation 
+ * Use when you only need one line
+ */
+.truncate-1-line {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*
+ * Responsive variants (example)
+ * Use different truncation at different breakpoints
+ */
+@media (max-width: 768px) {
+  .md\:truncate-1-line {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+  
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background-color: #f3f4f6;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 9999px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #9ca3af;
+  }

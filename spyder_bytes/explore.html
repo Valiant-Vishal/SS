@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore | SkillSwap</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm fixed top-0 left-0 right-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <!-- App Logo -->
+                    <div class="flex-shrink-0 flex items-center">
+                        <img src="favicon.svg" alt="SkillSwap Logo" class="h-8 w-8">
+                        <span class="ml-2 text-xl font-semibold text-gray-900">SkillSwap</span>
+                    </div>
+                </div>
+                
+                <!-- Auth Section -->
+                <div class="flex items-center">
+                    <div id="auth-section">
+                        <!-- Will be populated by JavaScript based on auth status -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Layout -->
+    <div class="flex pt-16 h-screen">
+        <!-- Left Sidebar -->
+        <div class="w-64 bg-white shadow-sm fixed left-0 top-16 bottom-0 flex flex-col">
+            <!-- Top Navigation Items -->
+            <div class="flex-1 overflow-y-auto py-4">
+                <div class="space-y-1">
+                    <a href="index.html" class="sidebar-item flex items-center px-4 py-3 text-sm font-medium text-gray-900 rounded-md">
+                        <i class="fas fa-home mr-3 text-gray-500"></i>
+                        Home
+                    </a>
+                    <a href="explore.html" class="sidebar-item flex items-center px-4 py-3 text-sm font-medium text-gray-900 rounded-md bg-blue-50 text-blue-600">
+                        <i class="fas fa-compass mr-3 text-blue-500"></i>
+                        Explore
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm font-medium text-gray-900 rounded-md">
+                        <i class="fas fa-comment-dots mr-3 text-gray-500"></i>
+                        Messages
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Bottom Navigation Items -->
+            <div class="py-4 border-t border-gray-200">
+                <div class="space-y-1">
+                    <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm font-medium text-gray-900 rounded-md">
+                        <i class="fas fa-bookmark mr-3 text-gray-500"></i>
+                        Saved
+                    </a>
+                    <a href="#" class="sidebar-item flex items-center px-4 py-3 text-sm font-medium text-gray-900 rounded-md">
+                        <i class="fas fa-cog mr-3 text-gray-500"></i>
+                        Settings
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 ml-64 p-6">
+            <!-- Search Bar -->
+            <div class="mb-6">
+                <div class="relative max-w-xl">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-search text-gray-400"></i>
+                    </div>
+                    <input type="text" id="search-input" class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Search for skills you want to learn...">
+                </div>
+            </div>
+            
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6" id="posts-title">Search Results</h2>
+            
+            <!-- Posts Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="posts-container">
+                <!-- Posts will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
